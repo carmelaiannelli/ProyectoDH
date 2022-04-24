@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finaliza tu compra</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+<body>
+    <!-- HEADER-->
+    <section class="headerPartial"
+      <%- include('./partials/header') %>
+    </section>
+
+    <main class="carritoMain">
+
+        <h1> Carrito de compras</h1>
+            
+        <section>
+            <div> Carrito de compras</div>
+            <div class="productsListed">
+                <div class="productListed">
+                    <section class="detalles del producto">
+                        <!-- ACA TENGO QUE HACER EL EJS PARA QUE SE AUTOAGREGUEN LOS PRODUCTOS-->
+                        <div> nombre del Producto</div>
+                        <div>precio unitario</div>
+                        <div>total</div>
+                    </section>
+                    <section class="botones">
+                        <button> cantidad</button>
+                        <button>eliminar</button>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <section class="resumenDeCompra">
+            <div class="contenedorResumen">
+                <div>
+                    <div>importe</div>
+                    <div>envio</div>
+                </div>
+                <div>
+                    <div>$$ importe</div>
+                    <div>$$ envio</div>
+                </div>
+                <div>
+                    <div>total</div>
+                    <div>$$ total</div>
+                </div>
+                <button>confirmar compra</button> <!-- todo deberia ser un form??-->
+                <img src="#" alt="fotitos metodos de pago">
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER-->
+    <section class="footerPartial"
+        <%- include('./partials/footer') %>
+    </section>
+
+</body>
+
+</html>

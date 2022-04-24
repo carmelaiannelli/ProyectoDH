@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cerrajeria Russo</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://kit.fontawesome.com/3964fc737d.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <section class="headerPartial"
+      <%- include('./partials/header') %>
+    </section>
+    <!-- Carrousel-->
+    <section class="carrousel">
+      <img src="#" alt="carrousel">
+      <i class="fa-solid fa-ellipsis"></i>
+      <a href="#"><button> boton</button></a>
+    </section>
+
+    <!-- List of company services. Need to modularize-->
+    <section class="companyServices">
+      <div class="companyDesc">
+        <div>Cerrajeria 24hs</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum labore quae, 
+          velit enim laborum harum esse numquam nesciunt repellendus veniam optio odit, dolore
+           id laboriosam aut distinctio aliquid quis voluptatem?</div>
+      </div>
+    </section>
+
+    <!-- CONVERTIR ESTA SECCION EN PARCIAL. PASARLO POR RUTA-->
+    <section class="servicesProvided">
+      <div class="serviceProvided">
+        <div>Service</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quaerat rerum culpa, 
+          est eos repellat autem labore excepturi vero dicta commodi hic et! Distinctio nulla rem 
+          saepe maiores illum debitis?</div>
+        <a href="#"><button> service</button></a> 
+      </div>
+    </section>
+    
+    <!-- CONTACT US -->
+    <%- include('./partials/contactUs') %>
+
+
+    <!-- FOOTER-->
+    <section class="footerPartial"
+      <%- include('./partials/footer') %>
+    </section>
+  </body>
+</html>

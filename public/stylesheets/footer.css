@@ -1,0 +1,15 @@
+footer{
+    margin-top: 20vh;
+    margin-bottom: 3vh;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+footer a{
+    transition: all 2ms;
+}
+
+footer a:hover{
+    color:rgb(29, 3, 100)
+}

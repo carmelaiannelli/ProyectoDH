@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Producto</title>
+</head>
+<body>
+    <form method="POST" action="/products/create" enctype="multipart/form-data"> 
+       
+        <div class="editProduct"> <input type="text" name="productName" placeholder="Nombre del producto"> </div>
+        <div class="editProduct"> <input type="text" name="productDescription" placeholder="Descripción del producto"> </div>
+        <div class="editProduct"> <input type="file" name="productPic" id="productPic" accept=".jpg, .png"></div>
+        <div class="editProduct">
+            <label for="productCat">Categoria del producto</label>
+            <select id="productCat" name="productCat">
+                <option value="cat1">cat1</option>
+                <option value="cat2">cat2</option>
+                <option value="cat3">cat3</option>
+                <option value="cat4">cat4</option>
+            </select>
+        </div>
+        <div class="editProduct">
+            <label for="productClor">Categoria del producto</label>
+            <select id="productColor" name="productColor">
+                <option value="col1">col1</option>
+                <option value="col2">col2</option>
+                <option value="col3">col3</option>
+                <option value="col4">col4</option>
+            </select>
+        </div>
+        <div class="editProduct"> <input type="number" name="productPrice" placeholder="Precio del producto"> </div>
+        <div class="editProduct"> <input type="text" name="brand" placeholder="Marca del producto"> </div>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #ebebeb;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* aca meto unos estilos para el carrito de compras*/
+.carritoMain{
+  margin-left: 3vw;
+  text-align: center;
+}

@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin:4%;
+}
+
+.formularioLogin{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.completar {
+    display: grid;
+    width: 70vw;
+    margin: 3vh auto;
+    height: 6vh;
+    text-align: center;
+}
+
+.completar input{
+    margin: 0px auto;
+    border: none;
+    background-color: none;
+    width: 100%;
+    border-radius: 6px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+}
+
+.botonesEnvio{
+    text-align: center;
+}
+.botonesEnvio button{
+
+    padding: 1%;
+    border: none;
+    background-color: #03264C;
+    color:white;
+    width: 70vw;
+    border-radius: 6px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: all 8ms;
+    font-size: 1rem;
+}
+
+.botonesEnvio button:hover{
+    background-color: #0022AA;
+}
+
+footer{
+    margin-top: 20vh;
+}

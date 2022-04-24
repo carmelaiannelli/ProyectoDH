@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin:4%;
+}
+
+.formularioRegistro{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.completar {
+    display: grid;
+    width: 80vw;
+    margin: 3vh auto;
+    height: 5vh;
+    text-align: center;
+
+}
+
+.completar input{
+    margin: 0px auto;
+    border: none;
+    background-color: none;
+    width: 100%;
+    border-radius: 6px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.checkmark{
+    text-align: center;
+    margin: 1em;
+
+}
+/*centrarlo, no se como
+input #avatar{
+
+} */
+
+.categoria{
+    font-weight: bolder;
+    font-size: 1em;
+    margin: 1em;
+}
+
+
+.checkmark div span{
+    margin-left: 2vw;
+    text-align: center;
+}
+
+.botonesEnvio{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5vw;
+    margin-top: 5vh;
+}
+
+.botonesEnvio button{
+
+    padding: 1%;
+    border: none;
+    background-color: #03264C;
+    color:white;
+    width: fit-content;
+    border-radius: 6px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: all 0.8ms;
+    
+}
+.botonesEnvio button:hover{
+    background-color: #0022AA;
+}

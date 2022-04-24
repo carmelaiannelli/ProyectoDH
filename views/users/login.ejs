@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresa a tu cuenta</title>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+
+</head>
+<body>
+    <!-- HEADER-->
+    <section class="headerPartial"
+      <%- include('../partials/header') %>
+    </section>
+
+    <main class="formularioLogin">
+        <div class="title">Hola! Ingresá tu usuario</div>
+        <form action="/login" method="POST">
+            <div class="inputsLogin">
+                
+                <div class="completar"> <input type="text" name="username" placeholder="Nombre de usuario"> </div>
+                <div class="completar"><input type="password" name="password" placeholder="Contraseña"></div>
+                
+            </div>
+            <div class="botonesEnvio">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+
+    </main>
+
+
+
+
+
+    <!-- FOOTER-->
+    <section class="footerPartial"
+        <%- include('../partials/footer') %>
+    </section>
+
+</body>
+</html>

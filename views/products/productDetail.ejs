@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+</head>
+<body>
+    <h1> ACA VA LA PAGINA CON TODOS LOS PRODUCTOS</h1>
+
+    <!-- HEADER-->
+    <section class="headerPartial"
+      <%- include('../partials/header') %>
+    </section>
+
+    <main>
+            
+        <section>
+            <div class="titular"> Visualiza todos nuestros productos</div>
+            
+            <div class="todosLosArticulos">
+
+                <article class="elemento">  
+                        <img src='<%= product.img %>' alt="<%= product.imgDescription %>">
+                        <div class="cajitaPrecio">
+                            <i class="fas fa-truck"></i>
+                            <div class="precioDescuento">
+                                <div class="precio"><%= product.price %> <%= product.currency %></div>
+                                <% if (product.discount !=null){ %>
+                                    <div class="descuento"><%= product.discount %></div>
+                                <% } %>
+                            </div>
+                            <div class="descripcion"><%= product.name %></div>
+                        </div>
+                        
+                        <a href="/products/<%=product.id%>/edit">Editar</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER-->
+    <section class="footerPartial"
+        <%- include('../partials/footer') %>
+    </section>
+
+</body>
+</html>
