@@ -18,23 +18,26 @@
             
         <section>
             <div class="titular"> Visualiza todos nuestros productos</div>
-            <a href="/products/add"><div class="nuevoProducto"> Agregar producto nuevo</div></a>
+            <button><a href="/products/add"><div class="nuevoProducto"> Agregar producto nuevo</div></a></button>
             
             <div class="todosLosArticulos">
 
                 <article class="elemento">
                     <% products.forEach(product=>{ %>   
                         <a href="/products/<%=product.id %>">   
-                            <img class="fotoProducto" src='<%= product.img %>' alt='<% product.imgDescription %>'>
+                            <img class="fotoProducto" src="/images/prodImages/<%=product.foto%>" alt='<% product.imgDescription %>'>
                             <div class="cajitaPrecio">
                                 <i class="fas fa-truck"></i>
                                 <div class="precioDescuento">
-                                    <div class="precio"><%= product.price %> <%= product.currency %></div>
+                                    <div class="precio"> $ <%= product.precio %></div>
                                     <% if (product.discount !=null){ %>
                                         <div class="descuento"><%= product.discount %></div>
                                     <% } %>
                                 </div>
-                                <div class="descripcion"><%= product.name %></div>
+                                <div class="descripcion"><%= product.nombre %></div>
+                                <div class="descripcion"><%= product.descripcion %></div>
+                                <div class="marca"><%= product.marca %></div>
+                                
                             </div>
                         </a>
                     <% }); %>

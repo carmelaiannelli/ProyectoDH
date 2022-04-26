@@ -1,32 +1,68 @@
-var products=require('../Data/listadoProductos')
-const db=require('../database/models');
+const db = require('../database/models');
+
 
 module.exports={
     all: (req,res)=>{
-        res.render('products/allProducts',{products});
+        db.Producto.findAll()
+        .then(products => {
+            res.render('products/allProducts',{products});
+        })
+        //res.render('products/allProducts',{products});
     },
     add:(req,res)=>{
         res.render('products/newProduct');
     },
-    /*create:(req,res)=>{
-        db.Productos.create({
+    create:(req,res)=>{
+        //res.render('products/newProduct');
+        
+        db.Producto.create({
             nombre:req.body.productName,
-            decripcion:req.body.productDescription,
-            //fotos,
+            descripcion:req.body.productDescription,
+            foto:req.file.filename,
             marca:req.body.brand,
             precio:req.body.productPrice
         })
+        .then(product=>{
+            res.redirect('/products/'+product.id)
+        })
 
-    },*/
+    },
     detail: (req,res)=>{
-        let product= products.find(product=>product.id==req.params.id);
-        res.render('products/productDetail',{product});
+        db.Producto.findByPk(req.params.id)
+        .then(product=>{
+            res.render('products/productDetail',{product});
+        });
     },
     edit:(req,res)=>{
-        let product= products.find(product=>product.id==req.params.id);
-        res.render('products/editProduct',{product});
+        db.Producto.findByPk(req.params.id)
+        .then(product=>{
+            res.render('products/editProduct',{product});
+        });
+        
     },
     update:(req,res)=>{
-        res.redirect('/products/')//cuando tenga db, redireccionar al mismo producto
+        db.Producto.update({
+            nombre:req.body.productName,
+            descripcion:req.body.productDescription,
+            //foto: req.file.filename,
+            marca:req.body.brand,
+            precio:req.body.productPrice
+            },
+            {
+            where: {
+            id: req.params.id
+            }
+        });
+        //aca no se como hacer para autollenar los campos incompletos
+        res.send(req.file)
+        //res.redirect('/products/'+ req.params.id)
+
+    },
+    delete:(req,res)=>{
+        db.Producto.destroy({
+            where: {id: req.params.id}
+        });
+    //como hago que se borren las fotos de mi hd?
+        res.redirect('/products')
     }
 };

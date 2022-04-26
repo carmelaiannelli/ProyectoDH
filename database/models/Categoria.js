@@ -1,10 +1,9 @@
-const modelos= require('../models');
-const { DataTypes } = require('sequelize/types');
+//const modelos= require('../models');
 
-
-const Categoria=(sequelize,DataTypes)=>{
-    Categoria=sequelize.define('categorias',
-    {
+module.exports=(sequelize,DataTypes)=>{
+    
+    const alias='Categoria'
+    const column= {
         id:{
             autoIncrement:true,
             primaryKey:true,
@@ -14,18 +13,22 @@ const Categoria=(sequelize,DataTypes)=>{
             allowNull:false,
             type:DataTypes.STRING(30)
         }
-    },
-    { timestamps:false});
+    };
+    const opc= { timestamps:false};
+
+
+    const Categoria= sequelize.define(alias,column,opc);
+
+   
+    // Categoria.associate=function(models){ //ese models es un cb predefinido y le puedo poner milanesa si quiero?
+    //     const Producto=models.Producto;
+    
+    //     Categoria.hasMany(Producto, {
+    //         foreignKey:'categoria_id',
+    //         as: 'productos'
+    //     });
+    // };
     
     return Categoria;
 
-};
-
-Categoria.associate=function(modelos){
-    const Producto=modelos.Producto;
-
-    Categoria.hasMany(Producto, {
-        foreignKey:'categoria_id',
-        as: 'productos'
-    });
 };

@@ -13,11 +13,11 @@
     <h1>Editar producto</h1>
     <h2><%=product.name%></h2>
     <img  class="productImage" src="<%=product.img%>" alt="<%=product.imgDescription%>">
-    <form method="POST" action="/products/<%=product.id%>/update?_method=PUT"> <!-- falta instalar method override y agregar un app.use-->
+    <form method="POST" action="/products/<%=product.id%>/update?_method=PUT"> 
        
-        <div class="editProduct"> <input type="text" name="productName" placeholder="<%= product.name %>"> </div>
+        <div class="editProduct"> <input type="text" name="productName" value="<%= product.nombre %>"> </div>
         <label for="productDescription"> Descripcion del producto</label>
-        <div class="editProduct"> <input type="text" name="productDescription" placeholder="<%=product.description %>"> </div>
+        <div class="editProduct"> <input type="text" name="productDescription" value="<%=product.descripcion %>"> </div>
         <div class="editProduct"> <input type="file" name="productPic" id="productPic" accept=".jpg, .png"></div>
         
         <!-- Aca falta preseleccionar la opcion que ya viene, pero no se como-->
@@ -39,8 +39,10 @@
                 <option value="col4">color 4</option>
             </select>
         </div>
-        <div class="editProduct"> <input type="number" name="productPrice" placeholder="<%=product.currency%> <%=product.price%>"> </div>
+        <div class="editProduct"> <input type="number" name="productPrice" value="<%=product.precio%>"> </div>
+        <div class="editProduct"> <input type="text" name="brand" value="<%=product.marca%>"> </div>
         <input type="submit" value="Submit">
     </form>
+
 </body>
 </html>

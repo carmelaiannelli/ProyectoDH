@@ -17,26 +17,32 @@
     <main>
             
         <section>
-            <div class="titular"> Visualiza todos nuestros productos</div>
-            
+ 
             <div class="todosLosArticulos">
 
                 <article class="elemento">  
-                        <img src='<%= product.img %>' alt="<%= product.imgDescription %>">
+                        <img src="/images/prodImages/<%=product.foto%>" alt="foto de producto">
                         <div class="cajitaPrecio">
                             <i class="fas fa-truck"></i>
                             <div class="precioDescuento">
-                                <div class="precio"><%= product.price %> <%= product.currency %></div>
+                                <div class="precio"> $ <%= product.precio %> </div>
                                 <% if (product.discount !=null){ %>
                                     <div class="descuento"><%= product.discount %></div>
                                 <% } %>
                             </div>
-                            <div class="descripcion"><%= product.name %></div>
+                            <div class="descripcion"><%= product.nombre %></div>
+                            <div class="descripcion"><%= product.descripcion %></div>
+                            <div class="descripcion"><%= product.marca %></div>
                         </div>
                         
-                        <a href="/products/<%=product.id%>/edit">Editar</a>
+                        <button><a href="/products/<%=product.id%>/edit">Editar</a></button>
                 </article>
             </div>
+
+
+            <form method="POST" action="/products/<%=product.id%>/delete?_method=DELETE"> 
+                <button type="submit">ELIMINAR PRODUCTO</button>
+            </form>
         </section>
     </main>
 

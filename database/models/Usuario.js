@@ -1,10 +1,8 @@
-const { DataTypes } = require('sequelize/types');
-
-const modelos= require('../models');
 
 module.exports=(sequelize,DataTypes)=>{
-    const Usuario=sequelize.define('Usuarios',
-    {
+
+    const alias= 'Usuario';
+    const columns={
         id:{
             autoIncrement:true,
             primaryKey:true,
@@ -12,7 +10,8 @@ module.exports=(sequelize,DataTypes)=>{
         },
         username:{
             allowNull:false,
-            type:DataTypes.STRING(30)
+            type:DataTypes.STRING(30),
+            unique:true
         },
         nombre:{
             allowNull:false,
@@ -24,7 +23,7 @@ module.exports=(sequelize,DataTypes)=>{
         },
         email:{
             allowNull:false,
-            type:DataTypes.STRING(25),
+            type:DataTypes.STRING(100),
             unique:true,
             isEmail:true
         },
@@ -38,24 +37,32 @@ module.exports=(sequelize,DataTypes)=>{
         },
         avatar:{
             allowNull:false,
-            type:DataTypes.STRING(100)
+            type:DataTypes.STRING(200)
         },
         password:{
             allowNull:false,
-            type:DataTypes.STRING(30)
+            type:DataTypes.STRING(200)
         }
-    },
-    { timestamps:false});
+        
+    };
+
+    const opc={ timestamps:false};
+
+
+    const Usuario=sequelize.define(alias,columns,opc);
+    
+    
+    // Usuario.associate=function(models){
+    //     const Producto=models.Producto;
+    
+    //     Usuario.hasMany(Producto,{
+    //         as:"productos",
+    //         foreignKey:"usuario_id",
+    //         onDelete: 'CASCADE',
+    //         onUpdate:'CASCADE'
+    //     });
+    // };
+    
+    
     return Usuario;
 };
-
-Usuario.associate=function(modelos){
-    const Producto=modelos.Producto;
-
-    Usuario.hasMany(Producto,{
-        as:"productos",
-        foreignKey:"usuario_id",
-        onDelete: 'CASCADE',
-        onUpdate:'CASCADE'
-    });
-}
