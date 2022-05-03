@@ -16,7 +16,7 @@ module.exports=(sequelize,DataTypes)=>{
             type:DataTypes.TEXT
         },
         foto:{
-            type:DataTypes.STRING(200)
+            type:DataTypes.STRING(300)
         },
         precio:{
             allowNull:false,
@@ -39,24 +39,24 @@ module.exports=(sequelize,DataTypes)=>{
             otherKey:'color_id',
             through: 'producto-color',
             timestamps:false,
-            onDelete: 'CASCADE',
-            onUpdate:'CASCADE' 
+            // onDelete: 'CASCADE',
+            // onUpdate:'CASCADE' 
         });
      //esto me rompe el codigo porque no le puse las variables creo
 
-        // Producto.belongsTo(models.Usuario, {
-        // as:"usuario",
-        // foreignKey:"usuario_id",
+        Producto.belongsTo(models.Usuario, {
+        as:"usuario",
+        foreignKey:"usuario_id",
         // onDelete: 'CASCADE',
         // onUpdate:'CASCADE'
-        // });
+        });
 
-        // Producto.belongsTo(models.Categoria, {
-        // as:"categoria",
-        // foreignKey:"categoria_id",
+        Producto.belongsTo(models.Categoria, {
+        as:"categoria",
+        foreignKey:"categoria_id",
         // onDelete: 'CASCADE',
         // onUpdate:'CASCADE'
-        // });
+        });
         
        
     };

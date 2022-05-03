@@ -27,8 +27,8 @@ module.exports=(sequelize,DataTypes)=>{
             otherKey:'producto_id',
             through: 'producto-color',
             timestamps:false,
-            onDelete: 'CASCADE',
-            onUpdate:'CASCADE' 
+            // onDelete: 'CASCADE',
+            // onUpdate:'CASCADE' 
         });
     };
     

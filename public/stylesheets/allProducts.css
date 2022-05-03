@@ -1,0 +1,110 @@
+body{
+    background-color: #efefef;
+}
+
+.bordeTotal{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+    
+
+button{
+    position: absolute;
+    right: 8vw;
+    top: 35vh;
+
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2ms;
+    }
+
+button:hover{
+    color:#000000;
+    background-color:#FFFFFF;
+}
+
+
+.seccionProductos{
+    display: flex;
+}
+.menuLateral{
+    width: 40vw;
+    background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
+    font-weight: bolder;
+    color: white;
+}
+.contenedorArticulos {
+    height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+    padding-bottom: 5vh;
+    margin-top: 5vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+   
+    max-width: 100%;
+    mask-size: 100%;
+
+}
+
+
+.articulo{
+    background-color: rgba(255, 255, 255, 0.92);
+    width: 20vw;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    margin-left: 2vw;
+    margin-top: 5vh;
+    transition: all 5ms;
+
+}
+
+.fotoProducto{
+
+    object-fit: contain;
+
+}
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------------*/
+.elemento:hover .descripcion{
+    display: block;
+    
+}
+
+.articulo:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100); 
+    background-color: white;
+}
+
+.descripcion{
+    font-size: 16px;
+    color:#666;
+    display: none;
+}
+
+

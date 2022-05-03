@@ -20,14 +20,14 @@ module.exports=(sequelize,DataTypes)=>{
     const Categoria= sequelize.define(alias,column,opc);
 
    
-    // Categoria.associate=function(models){ //ese models es un cb predefinido y le puedo poner milanesa si quiero?
-    //     const Producto=models.Producto;
+    Categoria.associate=function(models){ //ese models es un cb predefinido y le puedo poner milanesa si quiero?
+        const Producto=models.Producto;
     
-    //     Categoria.hasMany(Producto, {
-    //         foreignKey:'categoria_id',
-    //         as: 'productos'
-    //     });
-    // };
+        Categoria.hasMany(Producto, {
+            foreignKey:'categoria_id',
+            as: 'productos'
+        });
+    };
     
     return Categoria;
 

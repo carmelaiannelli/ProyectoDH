@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride=require('method-override');
+const session= require('express-session');
+
 
 //require routers
 var indexRouter = require('./routes/index');
@@ -26,12 +28,26 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
+//----------------MIDDLEWARES---------------------//
+app.use(session({secret: 'aca no entiendo que va pero meto un texto'}));
+
+
+//-------------------------------------------------//
+
+
+
+
+
+//------------------- ROUTERS ---------------------//
 
 app.use('/', indexRouter);
 app.use('/', usersRouter);
 app.use('/', productsRouter);
 app.use('/', servicesRouter);
 app.use('/',usersRouter);
+//-------------------------------------------------//
+
+
 
 
 

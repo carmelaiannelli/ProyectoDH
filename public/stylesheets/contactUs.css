@@ -1,0 +1,37 @@
+.contactUs{
+    padding:4% 5% 0%;
+    border-top: black solid 1px;
+    background-color: white;
+    display: flex;
+    justify-content: center
+}
+.container{
+    height:80vh;
+    width: 50vw;
+}
+.contactUs div form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap:2%
+    
+}
+
+.contactTitle{
+    font-size: 1.5rem;
+    padding-bottom: 2vh;
+}
+
+label{
+    margin-bottom: 1vh;
+    font-weight:bolder;
+    color: #de9242;
+}
+#name, #email, .contactForm textarea{
+    margin-bottom: 3vh;
+    padding: .8rem;
+    transition: all 2ms;
+    color: #F19F46;
+}
+
+

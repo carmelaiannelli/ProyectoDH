@@ -52,16 +52,16 @@ module.exports=(sequelize,DataTypes)=>{
     const Usuario=sequelize.define(alias,columns,opc);
     
     
-    // Usuario.associate=function(models){
-    //     const Producto=models.Producto;
+    Usuario.associate=function(models){
+        const Producto=models.Producto;
     
-    //     Usuario.hasMany(Producto,{
-    //         as:"productos",
-    //         foreignKey:"usuario_id",
-    //         onDelete: 'CASCADE',
-    //         onUpdate:'CASCADE'
-    //     });
-    // };
+        Usuario.hasMany(Producto,{
+            as:"productos",
+            foreignKey:"usuario_id",
+            // onDelete: 'CASCADE',
+            // onUpdate:'CASCADE'
+        });
+    };
     
     
     return Usuario;

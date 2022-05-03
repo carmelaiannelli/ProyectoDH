@@ -23,7 +23,11 @@ router.get('/signup', users.signUp);
 router.post('/newUser', uploadFile.single('avatar'),users.newUser);
 
 router.get('/login', users.login);
+router.post('/loggedIn', users.loggedIn);
 
+router.get('/mostrarSession',(req,res)=>{
+   res.send('mi numero de session es '+ req.session.usuario)
+})
 router.get('/home',users.homeLogged);
 
 module.exports = router;

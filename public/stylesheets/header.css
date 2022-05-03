@@ -4,33 +4,49 @@
 
 
 header{
-    background-color: rgb(37, 37, 102);
+    background-color: white;
     text-align: center;
-    padding: 0 3vw 0 3vw;
+    padding: 0;
     width: 100vw;
     box-sizing: border-box;
 }
 
-
+.contenedorTotal{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
 .barraPrincipal{
     display: flex;
     flex-wrap: wrap;
-    height: 25vh;
-    padding-top: 5vh;
-    padding-bottom: 3vh;
+    height: 16vh;
+
     box-sizing: border-box;
-    align-content: space-around;
+
+    border-bottom: black 1px solid;
+   
     /* border: 1px solid black; esto lo puse asi para poder guiarme en la estructura*/
+    align-content: space-around;
     justify-content: center;
     align-items: center;
-    gap:2%;
+    gap:3%;
 }
 
 
 .logo{
     width: 15vw;
     box-sizing: border-box;
-    border: 2px solid black;
+    display: flex;
+    position: relative;
+    right: 10vw;
+}
+.barraDeBusqueda{
+    border: rgba(230, 225, 225, 0.843) solid 1px;
+    border-radius: 0.5rem;
+    transition: all 2ms;
+}
+.barraDeBusqueda:hover{
+    border:#F19F46 solid 1px;
 }
 
 .barraDeBusqueda form{
@@ -40,7 +56,6 @@ header{
     align-items: center;
     width: 50vw;
     height: 5vh;
-    background-color: white;
     border: none;
     border-radius: 3px;
     color: #666;
@@ -50,6 +65,7 @@ header{
     box-sizing: border-box;
     padding-right: 3%;
     padding-left: 3%;
+    transition: all 2ms;
 }
 
 .searchbar{
@@ -64,6 +80,11 @@ header{
     background-color: transparent;
     font-size: 1.2rem;
     color: #666;
+    transition: all 2ms
+}
+
+.barraDeBusqueda form input{
+    color:#F19F46;
 }
 
 .menuDesplegable{
@@ -75,10 +96,20 @@ header{
 
 .listaBurger{
     padding-bottom: 2vh;
+    padding-top: 2.5vh;
+    padding-left: 3vw;
+    padding-right: 3vw;
 }
 
 .listaBurger div ul li a {
-    color:white
+    color:black;
+    font-weight: bold;
+    transition: all 2ms;
+}
+
+.listaBurger div ul li a:hover {
+    color: #F19F46;
+    font-weight: bolder;
 }
 
 #menuIzq li, #menuDer li {

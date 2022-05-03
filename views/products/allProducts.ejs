@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todos los productos</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/allProducts.css">
 </head>
 <body>
-    <h1> ACA VA LA PAGINA CON TODOS LOS PRODUCTOS</h1>
 
     <!-- HEADER-->
     <section class="headerPartial"
@@ -15,34 +16,41 @@
     </section>
 
     <main>
-            
-        <section>
-            <div class="titular"> Visualiza todos nuestros productos</div>
-            <button><a href="/products/add"><div class="nuevoProducto"> Agregar producto nuevo</div></a></button>
-            
-            <div class="todosLosArticulos">
 
-                <article class="elemento">
+        <section class="bordeTotal">
+    
+            <button><a href="/products/add"><div class="nuevoProducto"> Agregar producto nuevo</div></a></button>
+           
+            <div class="seccionProductos">
+                <div class="menuLateral">menu lateral a hacer como filtro</div>
+            
+                <article class="contenedorArticulos">
+
                     <% products.forEach(product=>{ %>   
-                        <a href="/products/<%=product.id %>">   
-                            <img class="fotoProducto" src="/images/prodImages/<%=product.foto%>" alt='<% product.imgDescription %>'>
-                            <div class="cajitaPrecio">
-                                <i class="fas fa-truck"></i>
-                                <div class="precioDescuento">
-                                    <div class="precio"> $ <%= product.precio %></div>
-                                    <% if (product.discount !=null){ %>
-                                        <div class="descuento"><%= product.discount %></div>
-                                    <% } %>
-                                </div>
-                                <div class="descripcion"><%= product.nombre %></div>
-                                <div class="descripcion"><%= product.descripcion %></div>
-                                <div class="marca"><%= product.marca %></div>
+
+                        <a href="/products/<%=product.id %>"></a>
+                            <div class="articulo">
+                            
+                                <img class="fotoProducto" src="/images/prodImages/<%=product.foto%>" alt='<% product.imgDescription %>'>
                                 
+                                <div class="cajitaPrecio">
+                                    
+                                    <div class="nombre"><%= product.nombre %></div>
+                                    <div class="precioDescuento">
+                                        <div class="precio"> $ <%= product.precio %></div>
+                                        <% if (product.discount !=null){ %>
+                                            <div class="descuento"><%= product.discount %></div>
+                                        <% } %>
+                                    </div>
+                                    <div class="marca"><%= product.marca %></div>
+                                </div>
                             </div>
                         </a>
                     <% }); %>
+
                 </article>
             </div>
+
         </section>
     </main>
 
