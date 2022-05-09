@@ -7,6 +7,9 @@ module.exports={
     homeLogged:(req,res)=>{
         res.render('users/homePage');
     },
+    contactUs: (req,res)=>{
+        res.send('aca la vista');
+    },
     signUp: (req,res)=>{
         if (!req.session.usuario){
             res.render('users/signUp');
@@ -64,5 +67,6 @@ module.exports={
             }}
         )
     },
+
 };
 

@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Cerrajeria Russo</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/landing.css' />
+  <script src="https://kit.fontawesome.com/3964fc737d.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <h1> ACA VA LA PAGINA CON TODOS LOS SERVICIOS</h1>
+
+  <header>
+    <!-- HEADER -->
+    <section class="headerPartial">
+        <%- include('../partials/header') %>
+    </section>
+  </header>
+
+
+  <main>
+    <section class="mainMain">
+      <!-- List of company services. Need to modularize-->
+      <section class="companyServices">
+        <div class="companyDesc">
+          <div class="titulo">Nuestros servicios</div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum labore quae,
+            velit enim laborum harum esse numquam nesciunt repellendus veniam optio odit, dolore
+            id laboriosam aut distinctio aliquid quis voluptatem?</div>
+        </div>
+      </section>
+    </section>
+
+
+    <!-- CONTACT US -->
+    <%- include('../partials/contactUs') %>
+
+  </main>
+ 
+   
+  <footer><!-- FOOTER-->
+    <section class="footerPartial">
+         <%- include('../partials/footer') %>
+    </section>
+  </footer>
 </body>
+
 </html>

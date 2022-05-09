@@ -19,6 +19,9 @@ const uploadFile = multer({ storage });
 /* GET home page. */
 router.get('/products', products.all);
 
+// no anda si uso /products/buscar. no entiendo por que
+router.get("/buscar", products.search);
+
 // Add a new product to the product list
 router.get('/products/add', products.add);
 router.post('/products/create',uploadFile.single('productPic'), products.create);

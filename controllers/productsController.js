@@ -1,5 +1,5 @@
 const db = require('../database/models');
-
+const Op= db.Sequelize.Op;
 
 module.exports={
     all: (req,res)=>{
@@ -27,6 +27,7 @@ module.exports={
         .then(product=>{
             res.redirect('/products/'+product.id)
         })
+        //renderizar vista busqueda
 
     },
     detail: (req,res)=>{
@@ -66,5 +67,15 @@ module.exports={
         });
     //como hago que se borren las fotos de mi hd?
         res.redirect('/products')
+    },
+    search: (req,res)=>{
+        db.Producto.findAll({
+            where: 
+                {nombre: {[Op.like]:'%'+ req.query.search+'%'}
+            }}
+        )
+        .then(function(resultados) {
+            res.render("products/resultadosBusqueda", {products:resultados})
+        })
     }
 };

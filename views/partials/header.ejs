@@ -19,8 +19,9 @@
                <a href="/"><img class="logo" src="/images/logo.png" alt="logo ML"></a> 
 
                 <div class="barraDeBusqueda"> 
-                    <form action="/search" method="POST">
-                        <input type="search" name="searchbar" id="searchbar" placeholder="Buscar productos, marcas y más" class="searchbar">
+                    <form action="/buscar" method="GET">
+                        <input type="text" name="search" id="searchbar" placeholder="Buscar productos, marcas y más" class="searchbar">
+                        
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>   
                 </div>

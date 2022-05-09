@@ -34,4 +34,21 @@ label{
     color: #F19F46;
 }
 
+#submitButton{
+    height: 2rem;
+    transition: all 5ms;
+    text-align: center;
+    font-size: 0.9rem;
+}
+#submitButton:hover{
+    background-color: #F19F46;
+    border: #b77732 solid 1px;
+    border-radius: 0.2rem;
+}
 
+
+/* estilo de la seccion contact us en vista contact us */
+
+.mainContactUs{
+    background-color: #efefef;
+}

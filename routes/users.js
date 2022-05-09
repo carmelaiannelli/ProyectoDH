@@ -16,7 +16,7 @@ const uploadFile = multer({ storage });
 //---------------------------------------------------------------------------//
 
 
-/* GET users services. */
+/*  users services. */
 
 
 router.get('/signup', users.signUp);
@@ -29,5 +29,10 @@ router.get('/mostrarSession',(req,res)=>{
    res.send('mi numero de session es '+ req.session.usuario)
 })
 router.get('/home',users.homeLogged);
+
+
+
+
+
 
 module.exports = router;
