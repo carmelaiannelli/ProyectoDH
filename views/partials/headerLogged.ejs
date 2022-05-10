@@ -1,0 +1,61 @@
+<head>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <link rel='stylesheet' href='/stylesheets/header.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+
+<body>
+    
+    <header>
+        <nav class="contenedorTotal">
+            <section class="barraPrincipal">
+                
+               <a href="/"><img class="logo" src="/images/logo.png" alt="logo ML"></a> 
+
+                <div class="barraDeBusqueda"> 
+                    <form action="/buscar" method="GET">
+                        <input type="text" name="search" id="searchbar" placeholder="Buscar productos, marcas y más" class="searchbar">
+                        
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>   
+                </div>
+
+               
+            </section>
+
+            <section class="listaBurger">
+                <nav class="menuDesplegable">  <STYLE>A {text-decoration: none;} A{color: black};</STYLE>
+                    <div>
+                        <ul id="menuIzq">
+                            <li><a href="/servicios">Nuestros servicios</a></li>
+                            <li><a href="/servicios/1">Servicio 1</a></li>
+                            <li><a href="/servicios/2">Servicio 2</a></li>
+                            <li><a href="/products">Nuestros Productos</a></li>
+                            <li><a href="/contactUs">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul id="menuDer">
+                            <li> Bienvenido</li>
+                            <li><a href="/checkout"> Carrito <i class="fas fa-shopping-basket"></i></a></li>
+                            <li><a href="/logout">Cerrar Sesion</a></li>
+                        </ul>
+                    </div>    
+                </nav>
+            
+                <div class="burger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </section>
+        </nav>
+
+
+    </header>
+
+</body>

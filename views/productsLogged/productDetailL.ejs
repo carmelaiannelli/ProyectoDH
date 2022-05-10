@@ -9,8 +9,8 @@
 <body>
 
     <!-- HEADER-->
-    <section class="headerPartial"
-      <%- include('../partials/header') %>
+    <section class="headerPartial">
+        <%- include('../partials/headerLogged') %>
     </section>
 
     <main>
@@ -33,11 +33,15 @@
                             <div class="descripcion"><%= product.descripcion %></div>
                             <div class="descripcion"><%= product.marca %></div>
                         </div>
+                        
+                        <button><a href="/products/<%=product.id%>/edit">Editar</a></button>
                 </article>
             </div>
 
 
-        
+            <form method="POST" action="/products/<%=product.id%>/delete?_method=DELETE"> 
+                <button type="submit">ELIMINAR PRODUCTO</button>
+            </form>
         </section>
     </main>
 

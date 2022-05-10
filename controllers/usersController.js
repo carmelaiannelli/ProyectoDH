@@ -4,9 +4,6 @@ var bcrypt = require('bcryptjs');
 
 
 module.exports={
-    homeLogged:(req,res)=>{
-        res.render('users/homePage');
-    },
     contactUs: (req,res)=>{
         res.send('aca la vista');
     },
@@ -59,7 +56,7 @@ module.exports={
                 if (checkPw){
                     let loginAprobado=true
                     req.session.usuario=usuario.id;
-                    res.send('logeado')
+                    res.redirect('/')
                 } else {
                     loginAprobado=false
                     res.send('contraseña incorrecta')
@@ -67,6 +64,12 @@ module.exports={
             }}
         )
     },
+    logout: (req,res)=>{
+        if(req.session.usuario){
+            req.session.usuario=null
+        };
+        res.redirect('/');
+    }
 
 };
 

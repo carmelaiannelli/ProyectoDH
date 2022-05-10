@@ -28,7 +28,8 @@ router.post('/loggedIn', users.loggedIn);
 router.get('/mostrarSession',(req,res)=>{
    res.send('mi numero de session es '+ req.session.usuario)
 })
-router.get('/home',users.homeLogged);
+
+router.get('/logout', users.logout);
 
 
 
