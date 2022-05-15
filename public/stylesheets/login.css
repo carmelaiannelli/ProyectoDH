@@ -42,7 +42,7 @@
 
     padding: 1%;
     border: none;
-    background-color: #03264C;
+    background-color: #f0922e;
     color:white;
     width: 70vw;
     border-radius: 6px;
@@ -53,7 +53,7 @@
 }
 
 .botonesEnvio button:hover{
-    background-color: #0022AA;
+    background-color: #F19F46;
 }
 
 footer{

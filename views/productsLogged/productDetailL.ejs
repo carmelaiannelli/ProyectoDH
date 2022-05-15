@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producto</title>
+    <title> <%= product.nombre %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/productDetail.css">
 </head>
 <body>
 
@@ -17,31 +19,34 @@
             
         <section>
  
-            <div class="todosLosArticulos">
+            <div class="articuloCompleto">
 
-                <article class="elemento">  
-                        <img src="/images/prodImages/<%=product.foto%>" alt="foto de producto">
-                        <div class="cajitaPrecio">
-                            <i class="fas fa-truck"></i>
-                            <div class="precioDescuento">
-                                <div class="precio"> $ <%= product.precio %> </div>
-                                <% if (product.discount !=null){ %>
-                                    <div class="descuento"><%= product.discount %></div>
-                                <% } %>
-                            </div>
-                            <div class="descripcion"><%= product.nombre %></div>
-                            <div class="descripcion"><%= product.descripcion %></div>
-                            <div class="descripcion"><%= product.marca %></div>
-                        </div>
+                <div class="elemento">  
+                    <div class="foto">
+                        <img  src="/images/prodImages/<%=product.foto%>" alt="foto de producto">
+                    </div>
+
+                    <div class="cajitaPrecio">
                         
-                        <button><a href="/products/<%=product.id%>/edit">Editar</a></button>
-                </article>
+                        <div class="precioDescuento">
+                            <div class="precio"> $ <%= product.precio %> </div>
+                            <% if (product.discount !=null){ %>
+                                <div class="descuento"><%= product.discount %></div>
+                            <% } %>
+                        </div>
+                        <div class="descripcion"><%= product.nombre %></div>
+                        <div class="descripcion"><%= product.descripcion %></div>
+                        <div class="descripcion"><%= product.marca %></div>
+                    </div>
+                </div>
+                <button><a href="/products/<%=product.id%>/edit">Editar</a></button>
+                <form method="POST" action="/products/<%=product.id%>/delete?_method=DELETE"> 
+                    <button type="submit">ELIMINAR PRODUCTO</button>
+                </form>
             </div>
 
 
-            <form method="POST" action="/products/<%=product.id%>/delete?_method=DELETE"> 
-                <button type="submit">ELIMINAR PRODUCTO</button>
-            </form>
+            
         </section>
     </main>
 

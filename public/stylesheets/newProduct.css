@@ -1,0 +1,43 @@
+
+.inputContainer {
+    display: grid;
+    width: 70vw;
+    margin: 3vh auto;
+    height: 8vh;
+    text-align: center;
+}
+
+.newProduct input, #productCat, #productColor{
+    margin-top: 1vh;
+    height: 4vh;
+    border: none;
+    background-color: none;
+    width: 100%;
+    border-radius: 6px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.label{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-weight: bold;
+}
+
+.botonEnvio {
+    margin: 3vh;
+    padding: 1%;
+    border: none;
+    background-color: #f0922e;
+    color:white;
+    width: fit-content;
+    border-radius: 6px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: all 0.8ms;
+    
+}
+.botonEnvio:hover{
+    background-color: #F19F46;
+}
