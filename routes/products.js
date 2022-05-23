@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var products=require('../controllers/productsController');
+const {body}=require('express-validator');
 const path=require('path');
+
 
 //-------------------------------    MULTER   -------------------------------//
 const multer = require('multer');

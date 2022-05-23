@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const {body, validationResult}=require('express-validator');
 
 var bcrypt = require('bcryptjs');
 
@@ -15,22 +16,27 @@ module.exports={
         }
     },
     newUser:(req,res)=>{
-
-        db.Usuario.create({
-            nombre: req.body.name,
-            apellido: req.body.lastName,
-            username: req.body.username,
-            email:req.body.email,
-            fechaDeNacimiento:req.body.birthday,
-            domicilio:req.body.address,
-            avatar:req.file.filename,
-            password: bcrypt.hashSync(req.body.password,10)
-        })
-        // .then(usuario=>{
-        //     req.session.usuario=usuario.id
-        // }) 
-        // ESTO ASI COMO ESTA, NO FUNCIONA. POR QUE? CREATE NO ME LO DEVUELVE CON ID?
-        res.redirect('/login')
+        let errores=validationResult(req)
+        if (!errores.isEmpty()){
+            res.send (errores)
+        } else {
+            db.Usuario.create({
+                nombre: req.body.name,
+                apellido: req.body.lastName,
+                username: req.body.username,
+                email:req.body.email,
+                fechaDeNacimiento:req.body.birthday,
+                domicilio:req.body.address,
+                password: bcrypt.hashSync(req.body.password,10),
+                avatar:req.file.filename
+                //no pude hacer andar un default pic
+            })
+            // .then(usuario=>{
+            //     req.session.usuario=usuario.id
+            // }) 
+            // ESTO ASI COMO ESTA, NO FUNCIONA. POR QUE? CREATE NO ME LO DEVUELVE CON ID?
+            res.redirect('/login')
+        }
     }
     ,
     login: (req,res)=>{
