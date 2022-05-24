@@ -1,59 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrate</title>
     <link rel="stylesheet" href="/stylesheets/signUp.css">
-
+    <script src="./js/validacionRegistro.js"></script>
 </head>
+
 <body>
     <!-- HEADER-->
-    <section class="headerPartial"
-      <%- include('../partials/header') %>
+    <section class="headerPartial" <%- include('../partials/header') %>
     </section>
 
     <main>
 
         <div class="title"> Completa tus datos</div>
-    
+
         <form action="/newUser" method="POST" class="formularioRegistro" enctype="multipart/form-data">
-           <div class="completar"> <input required type="text" name="name" placeholder="Nombre"> </div>
-           <div class="completar"> <input required type="text" name="lastName" placeholder="Apellido"> </div>
-           <div class="completar"> <input required type="text" name="username" placeholder="Nombre de usuario"> </div>
-           <div class="completar"> <input required type="email" name="email" placeholder="E-mail"> </div>
-           <div class="completar"> <input required type="date" name="birthday" placeholder="Fecha de Nacimiento"> </div>
-           <div class="completar"> <input required type="text" name="address" placeholder="Domicilio"> </div>
-            <div class="checkmark"> 
-                <label for="avatar"><p class="categoria">Foto de perfil</p></label>
-                <input type="file" name="avatar" id="avatar" accept=".jpg, .png, .jpeg, .gif">
+            <div class="completar"> <input class='name' required type="text" name="name" placeholder="Nombre"> </div>
+            <div class="completar"> <input class='lastName' required type="text" name="lastName" placeholder="Apellido">
             </div>
-            <div class="completar"><input required type="password" name="password" placeholder="Contraseña"></div>
+            <div class="completar"> <input class='username' required type="text" name="username"
+                    placeholder="Nombre de usuario"> </div>
+            <div class="completar"> <input class='email' required type="email" name="email" placeholder="E-mail"> </div>
+            <div class="completar"> <input required type="date" name="birthday" placeholder="Fecha de Nacimiento">
+            </div>
+            <div class="completar"> <input required type="text" name="address" placeholder="Domicilio"> </div>
+            <div class="checkmark">
+                <label for="avatar">
+                    <p class="categoria">Foto de perfil</p>
+                </label>
+                <input type="file" class='avatar' name="avatar" id="avatar" accept=".jpg, .png, .jpeg, .gif">
+            </div>
+            <div class="completar"><input class='password' required type="password" name="password" placeholder="Contraseña"></div>
             <!--<div class="completar"><input type="password" name="password" placeholder="Confirmar contraseña"></div>
             -->
+
+
+            <div class="errores" style="color: red; text-align: center; font-size: 0.8rem;"></div>
+            
             <div class="botonesEnvio">
                 <button type="submit">Enviar</button>
                 <button type="delete">Reset</button>
                 <!-- este tiene que ser un get-->
             </div>
-    
-    
-    
-    
+
+
+
+
         </form>
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     </main>
 
     <!-- FOOTER-->
-    <section class="footerPartial"
-        <%- include('../partials/footer') %>
+    <section class="footerPartial" <%- include('../partials/footer') %>
     </section>
 
+
+
 </body>
+
 </html>

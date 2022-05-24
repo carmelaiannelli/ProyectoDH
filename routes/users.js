@@ -7,10 +7,6 @@ const {body}=require('express-validator');
 const path=require('path');
 
 // ---------------------------- validaciones -----------------------------------//
-//
-// hay errores en las validaciones.ver username, email, avatar
-//
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 const validacionRegistro=[
    body('name')
@@ -61,19 +57,27 @@ const validacionRegistro=[
    body('password')
       .notEmpty()
       .isLength({ min: 8 })
-      .isStrongPassword()
       .withMessage('la contraseña debe tener minimo 8 caracteres y simbolos especiales')
-   ,
+      // .custom(value=>{
+      //    let passwordVerif= ['!','@','#','$','%','^','&','*','(',')','-','_'];
+      //    return value.includes(passwordVerif);
+      // })
+      
+      // use .isStrongPassword pero no me acepta las contraseñas,asi que por ahora lo comento. despues use eso que deje ahi pero no anda
+   
+      ,
 
    body('avatar')
-
       .custom((value,{req})=>{
-         let file=req.file;
-         let extensiones=[".jpg",".png",".JPEG",".GIF"];
-         let extensionArchivo= path.extname(file.originalname);
-         return extensionArchivo.includes(!extensiones)
-      }).withMessage("formato invalido")
-
+         let file=req.file.originalname;
+         
+         let extensionesPermitidas=[".jpg",".png",".JPEG",".GIF"];
+         let extensionArchivo= path.extname(file);
+         
+         if( extensionArchivo.includes(!extensionesPermitidas)){
+            throw new Error('formato invalido')
+         }
+      })
 
 ];
 
