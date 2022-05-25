@@ -70,13 +70,18 @@ const validacionRegistro=[
    body('avatar')
       .custom((value,{req})=>{
          let file=req.file.originalname;
+      
+         let extensionArchivo= (path.extname(file)).toLowerCase();
          
-         let extensionesPermitidas=[".jpg",".png",".JPEG",".GIF"];
-         let extensionArchivo= path.extname(file);
-         
-         if( extensionArchivo.includes(!extensionesPermitidas)){
-            throw new Error('formato invalido')
+         console.log(extensionArchivo.toString() != '.jpeg')
+
+         if (extensionArchivo.toString() == '.jpeg' || extensionArchivo.toString() == '.gif'){
+            return true 
+         } else {
+            throw new Error('img format is incorrect');
          }
+           
+         
       })
 
 ];
