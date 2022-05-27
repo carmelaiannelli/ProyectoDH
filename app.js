@@ -15,6 +15,12 @@ var servicesRouter=require('./routes/services');
 var usersRouter=require('./routes/users');
 
 
+// require routers API
+var apiUsersRouter = require('./routes/APIS/apiUsersRouter');
+//var apiProductsRouter = require('./routes/APIS/apiProductRouter');
+
+
+
 var app = express();
 
 // view engine setup
@@ -45,10 +51,17 @@ app.use('/', usersRouter);
 app.use('/', productsRouter);
 app.use('/', servicesRouter);
 app.use('/',usersRouter);
+
 //-------------------------------------------------//
 
+//-------------------- API ROUTERS -----------------------------//
+app.use('/', apiUsersRouter);
+//app.use('/', apiProductsRouter);
 
 
+
+
+//-------------------------------------------------//
 
 
 // catch 404 and forward to error handler
