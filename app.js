@@ -15,11 +15,12 @@ var servicesRouter=require('./routes/services');
 var usersRouter=require('./routes/users');
 
 
-// require routers API
+// require routers DH API
 var apiUsersRouter = require('./routes/APIS/apiUsersRouter');
-//var apiProductsRouter = require('./routes/APIS/apiProductRouter');
+var apiProductsRouter = require('./routes/APIS/apiProductRouter');
 
-
+// require sendgrid api
+var contactRouter = require('./routes/APIS/apiSendGrid/contactapi');
 
 var app = express();
 
@@ -56,10 +57,12 @@ app.use('/',usersRouter);
 
 //-------------------- API ROUTERS -----------------------------//
 app.use('/', apiUsersRouter);
-//app.use('/', apiProductsRouter);
+app.use('/', apiProductsRouter);
 
 
+// --- SendGrid -----//
 
+app.use(contactRouter);
 
 //-------------------------------------------------//
 

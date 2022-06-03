@@ -1,24 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Producto</title>
     <link rel="stylesheet" href="/stylesheets/newProduct.css">
+    <!-- <script src="/js/validacionProducto.js"></script> -->
+    
 </head>
+
 <body>
     <header>
         <%- include('../partials/headerLogged') %>
     </header>
     <main>
-        <form method="POST" action="/products/create" enctype="multipart/form-data"> 
+        <form method="POST" action="/products/create" enctype="multipart/form-data" class="formularioProducto"> 
             <div class="inputContainer">
-                <div class="newProduct"> <input type="text" name="productName" placeholder="Nombre del producto"> </div>
-                <div class="newProduct"> <input type="text" name="productDescription" placeholder="Descripción del producto"> </div>
+                <div class="newProduct">
+                    <input type="text" name="productName" class="productName" placeholder="Nombre del producto" required> 
+                </div>
+                <div class="newProduct"> 
+                    <input type="text" name="productDescription" class="productDescription" placeholder="Descripción del producto"> 
+                </div>
                 <div class="newProduct label"> 
                     <label for="productPic"> Foto del producto</label>
-                    <input type="file" name="productPic" id="productPic" accept=".jpg, .png">
+                    <input type="file" name="productPic" id="productPic" accept=".jpg, .png, .gif, .jpeg" required>
+                    
                 </div>
                 <div class="newProduct label">
                     <label for="productCat">Categoria del producto</label>
@@ -30,7 +38,7 @@
                     </select>
                 </div>
                 <div class="newProduct label">
-                    <label for="productColor">Categoria del producto</label>
+                    <label for="productColor">Color del producto</label>
                     <select id="productColor" name="productColor">
                         <option value="1">dorado</option>
                         <option value="2">plateado</option>
@@ -40,7 +48,7 @@
                 </div>
                 <div class="newProduct"> <input type="number" name="productPrice" placeholder="Precio del producto"> </div>
                 <div class="newProduct"> <input type="text" name="brand" placeholder="Marca del producto"> </div>
-            
+                <div class="errores" style="color: red;"></div>
                 <input class="botonEnvio" type="submit" value="Guardar">
             </div>
         </form>

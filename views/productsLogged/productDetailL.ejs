@@ -7,6 +7,7 @@
     <title> <%= product.nombre %></title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/productDetail.css">
+    <script src="/js/eliminarProducto.js"></script>
 </head>
 <body>
 
@@ -40,7 +41,8 @@
                     </div>
                 </div>
                 <button><a href="/products/<%=product.id%>/edit">Editar</a></button>
-                <form method="POST" action="/products/<%=product.id%>/delete?_method=DELETE"> 
+                
+                <form method="POST" action="/products/<%=product.id%>/delete?_method=DELETE" class="eliminarPto"> 
                     <button type="submit">ELIMINAR PRODUCTO</button>
                 </form>
             </div>

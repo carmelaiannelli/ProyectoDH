@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Producto</title>
     <link rel='stylesheet' href='/stylesheets/header.css' />
+   <!--  <script src="/js/validacionProductEdit.js"></script> -->
 
 </head>
 <body>
@@ -16,12 +17,20 @@
     <h1>Editar producto</h1>
     <h2><%=product.name%></h2>
     <img  class="productImage" src="<%=product.img%>" alt="<%=product.imgDescription%>">
-    <form method="POST" action="/products/<%=product.id%>/update?_method=PUT"> 
+    
+    
+    <form method="POST" class="formularioProducto" action="/products/<%=product.id%>/update?_method=PUT" > 
        
-        <div class="editProduct"> <input type="text" name="productName" value="<%= product.nombre %>"> </div>
+        <div class="editProduct"> 
+            <input type="text" name="productName" class="productName" value="<%= product.nombre %>"> 
+        </div>
         <label for="productDescription"> Descripcion del producto</label>
-        <div class="editProduct"> <input type="text" name="productDescription" value="<%=product.descripcion %>"> </div>
-        <div class="editProduct"> <input type="file" name="productPic" id="productPic" accept=".jpg, .png"></div>
+        <div class="editProduct"> 
+            <input type="text" name="productDescription" class="productDescription" value="<%=product.descripcion %>"> 
+        </div>
+        <div class="editProduct"> 
+            <input type="file" name="productPic" id="productPic" accept=".jpg, .png">
+        </div>
         
         <!-- Aca falta preseleccionar la opcion que ya viene, pero no se como-->
         <div class="editProduct">
@@ -44,6 +53,7 @@
         </div>
         <div class="editProduct"> <input type="number" name="productPrice" value="<%=product.precio%>"> </div>
         <div class="editProduct"> <input type="text" name="brand" value="<%=product.marca%>"> </div>
+        <div class="errores" style="color: red;"></div>
         <input type="submit" value="Submit">
     </form>
 

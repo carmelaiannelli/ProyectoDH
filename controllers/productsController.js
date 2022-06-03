@@ -1,3 +1,4 @@
+const { body } = require('express-validator');
 const db = require('../database/models');
 const Op= db.Sequelize.Op;
 
@@ -26,16 +27,16 @@ module.exports={
             
             db.Producto.create({
                 nombre:req.body.productName,
-                usuario_id:1,
-                categoria_id:req.session.usuario,
+                usuario_id:req.session.usuario,
+                categoria_id:req.body.productCat,
                 descripcion:req.body.productDescription,
                 foto:req.file.filename,
                 marca:req.body.brand,
                 precio:req.body.productPrice
             })
-            .then(product=>{
-                res.redirect('/products/'+product.id)
-            })
+            // .then(product=>{
+            //     res.redirect('/products/'+product.id)
+            // })
         }
     },
     detail: (req,res)=>{
@@ -74,9 +75,7 @@ module.exports={
                 }
             });
         //aca no se como hacer para autollenar los campos incompletos
-            res.send(req.file)
-        } else {
-            res.redirect('/products/'+req.params.id)
+        res.redirect('/products/'+req.params.id)
         }
     },
     delete:(req,res)=>{

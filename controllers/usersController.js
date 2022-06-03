@@ -55,7 +55,7 @@ module.exports={
         })
         .then(usuario=>{
             if (!usuario){
-                res.send('usuario invalido')
+                res.redirect('/login')
             } else{
                 let userPw=usuario.password;
                 let checkPw=bcrypt.compareSync(req.body.password,userPw);
@@ -65,7 +65,7 @@ module.exports={
                     res.redirect('/')
                 } else {
                     loginAprobado=false
-                    res.send('contraseña incorrecta')
+                    res.redirect('/login')
                 }
             }}
         )

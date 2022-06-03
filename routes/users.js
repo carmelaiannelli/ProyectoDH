@@ -73,9 +73,9 @@ const validacionRegistro=[
       
          let extensionArchivo= (path.extname(file)).toLowerCase();
          
-         console.log(extensionArchivo.toString() != '.jpeg')
+         let extensionAUsar= extensionArchivo.toString();
 
-         if (extensionArchivo.toString() == '.jpeg' || extensionArchivo.toString() == '.gif'){
+         if (extensionAUsar == '.jpeg' || extensionAUsar == '.gif' || extensionAUsar == '.jpg' || extensionAUsar == '.png'){
             return true 
          } else {
             throw new Error('img format is incorrect');
@@ -85,8 +85,6 @@ const validacionRegistro=[
       })
 
 ];
-
-
 
 //----------------------------------------------------------------------------//
 

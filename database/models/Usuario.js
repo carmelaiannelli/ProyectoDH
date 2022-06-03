@@ -58,8 +58,8 @@ module.exports=(sequelize,DataTypes)=>{
         Usuario.hasMany(Producto,{
             as:"productos",
             foreignKey:"usuario_id",
-            // onDelete: 'CASCADE',
-            // onUpdate:'CASCADE'
+            onDelete: 'CASCADE',
+            onUpdate:'CASCADE'
         });
     };
     

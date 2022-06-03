@@ -47,8 +47,8 @@ module.exports=(sequelize,DataTypes)=>{
         Producto.belongsTo(models.Usuario, {
         as:"usuario",
         foreignKey:"usuario_id",
-        // onDelete: 'CASCADE',
-        // onUpdate:'CASCADE'
+        onDelete: 'CASCADE',
+        onUpdate:'CASCADE'
         });
 
         Producto.belongsTo(models.Categoria, {

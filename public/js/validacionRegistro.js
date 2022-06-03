@@ -29,7 +29,6 @@ window.addEventListener('load',function(){
         if (!passwordRegex.test(password)){
             errores.push('la contraseña debe tener caracteres especiales')
         }
-        console.log(errores)
 
         if (errores.length){
             event.preventDefault();

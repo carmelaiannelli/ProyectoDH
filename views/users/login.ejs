@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingresa a tu cuenta</title>
     <link rel="stylesheet" href="/stylesheets/login.css">
-
 </head>
 <body>
     <!-- HEADER-->
@@ -19,8 +18,8 @@
         <form action="/loggedIn" method="POST">
             <div class="inputsLogin">
                 
-                <div class="completar"> <input type="text" name="username" placeholder="Nombre de usuario"> </div>
-                <div class="completar"><input type="password" name="password" placeholder="Contraseña"></div>
+                <div class="completar"> <input type="text" name="username" placeholder="Nombre de usuario" required> </div>
+                <div class="completar"><input type="password" name="password" placeholder="Contraseña" required></div>
                 
             </div>
             <div class="botonesEnvio">
@@ -35,9 +34,9 @@
 
 
     <!-- FOOTER-->
-    <section class="footerPartial">
+    <footer class="footerPartial">
         <%- include('../partials/footer') %>
-    </section>
+    </footer>
 
 </body>
 </html>
