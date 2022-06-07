@@ -18,14 +18,17 @@
         <form method="POST" action="/products/create" enctype="multipart/form-data" class="formularioProducto"> 
             <div class="inputContainer">
                 <div class="newProduct">
-                    <input type="text" name="productName" class="productName" placeholder="Nombre del producto" required> 
+                    <input 
+                    value="<%= locals.olds? olds.productName : ''  %>"
+                    
+                    type="text" name="productName" class="productName" placeholder="Nombre del producto" > required
                 </div>
                 <div class="newProduct"> 
                     <input type="text" name="productDescription" class="productDescription" placeholder="Descripción del producto"> 
                 </div>
                 <div class="newProduct label"> 
                     <label for="productPic"> Foto del producto</label>
-                    <input type="file" name="productPic" id="productPic" accept=".jpg, .png, .gif, .jpeg" required>
+                    <input type="file" name="productPic" id="productPic"  required> accept=".jpg, .png, .gif, .jpeg"
                     
                 </div>
                 <div class="newProduct label">
@@ -50,6 +53,15 @@
                 <div class="newProduct"> <input type="text" name="brand" placeholder="Marca del producto"> </div>
                 <div class="errores" style="color: red;"></div>
                 <input class="botonEnvio" type="submit" value="Guardar">
+            </div>
+
+
+            <div> 
+                <% if (locals.allErrors){ %> 
+                <% allErrors.forEach(error=>{ %>
+                    <p> <%= error.msg %></p>
+                <% }) %>
+                <% } %>
             </div>
         </form>
     </main> 

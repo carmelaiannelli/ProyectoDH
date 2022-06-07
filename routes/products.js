@@ -10,10 +10,11 @@ const path=require('path');
 const validacionPto=[
 
    body('productName')
-      .isString()
-      .isLength({ min: 5 })
-      .notEmpty()
-      .withMessage('debe tener minimo 5 caracteres')
+      .notEmpty().withMessage('el campo debe estar completo').bail()
+      .isString().withMessage('debe tener minimo 5 caracteres').bail()
+      .isLength({ min: 5 }).withMessage('debe tener minimo 5 caracteres')
+      
+      
    ,
 
    body('productDescription')      
@@ -37,7 +38,6 @@ const validacionPto=[
       })
 ];
 
-console.log('ACAAAAAAAAAAA ' )
 
 
 //---------------------------------------------------------------------------//

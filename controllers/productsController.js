@@ -1,4 +1,4 @@
-const { body } = require('express-validator');
+const { body, validationResult } = require('express-validator');
 const db = require('../database/models');
 const Op= db.Sequelize.Op;
 
@@ -23,20 +23,28 @@ module.exports={
     },
     create:(req,res)=>{
         //res.render('products/newProduct');
-        if (req.session.usuario){
-            
-            db.Producto.create({
-                nombre:req.body.productName,
-                usuario_id:req.session.usuario,
-                categoria_id:req.body.productCat,
-                descripcion:req.body.productDescription,
-                foto:req.file.filename,
-                marca:req.body.brand,
-                precio:req.body.productPrice
-            })
-            // .then(product=>{
-            //     res.redirect('/products/'+product.id)
-            // })
+
+        let errores=validationResult(req);
+        if (errores.isEmpty()){
+
+            if (req.session.usuario){
+                
+                db.Producto.create({
+                    nombre:req.body.productName,
+                    usuario_id:req.session.usuario,
+                    categoria_id:req.body.productCat,
+                    descripcion:req.body.productDescription,
+                    foto:req.file.filename,
+                    marca:req.body.brand,
+                    precio:req.body.productPrice
+                })
+                .then(product=>{
+                    res.redirect('/products/'+product.id)
+                })
+            }
+        } else {
+            res.render('productsLogged/newProduct',{allErrors: errores.array(), olds: req.body})
+            // mapped me devuelve el error en forma de objeto
         }
     },
     detail: (req,res)=>{

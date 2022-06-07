@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingresa a tu cuenta</title>
-    <link rel="stylesheet" href="/stylesheets/login.css">
+    
+    <link rel="stylesheet" href="/stylesheets/signup.css">
 </head>
 <body>
     <!-- HEADER-->
@@ -14,8 +15,8 @@
     </section>
 
     <main class="formularioLogin">
-        <div class="title">Hola! Ingresá tu usuario</div>
-        <form action="/loggedIn" method="POST">
+        <!-- <div class="title"></div>
+        
             <div class="inputsLogin">
                 
                 <div class="completar"> <input type="text" name="username" placeholder="Nombre de usuario" required> </div>
@@ -25,8 +26,37 @@
             <div class="botonesEnvio">
                 <button type="submit">Enviar</button>
             </div>
-        </form>
+        </form> -->
 
+
+        <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+            <div class="wrapper wrapper--w960">
+                <div class="card card-2">
+
+                    <div class="card-body">
+                        <h2 class="title">Hola! Ingresá con tu usuario</h2>
+                        <div class="contenedorForm">
+                            <form form action="/loggedIn" method="POST">
+                               
+                                <div class="input-group">
+                                    <input class="input--style-2" id="username" type="text" placeholder="Nombre de Usuario" name="username" required>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <input class="input--style-2" id="password" type="password" placeholder="Contraseña" name="password" required>
+                                </div>
+
+                                <div class="p-t-30">
+                                    <button class="btn btn--radius btn--green" type="submit">Enviar</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="errores" style="color:red"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
 

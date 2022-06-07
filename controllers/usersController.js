@@ -10,7 +10,8 @@ module.exports={
     },
     signUp: (req,res)=>{
         if (!req.session.usuario){
-            res.render('users/signUp');
+            res.render('users/signUp.ejs');
+
         } else {
             res.send('ya estas registrado')
         }

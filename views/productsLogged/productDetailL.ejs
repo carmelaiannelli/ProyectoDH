@@ -19,7 +19,7 @@
     <main>
             
         <section>
- 
+            <!--  DIV ORIGINAL
             <div class="articuloCompleto">
 
                 <div class="elemento">  
@@ -46,16 +46,60 @@
                     <button type="submit">ELIMINAR PRODUCTO</button>
                 </form>
             </div>
+            -->
+
+            <!--  ACA VA LO QUE COPIE DE INTERNET -->
 
 
-            
+            <section class="container">
+ 
+                <!-- Left Column / Headphones Image -->
+                <div class="left-column">
+                  <img src="/images/prodImages/<%=product.foto%>" alt="foto de producto">
+                </div>
+               
+               
+                <!-- Right Column -->
+                <div class="right-column">
+               
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span><%= product.marca %></span>
+                    <h1><%= product.nombre %></h1>
+                    <p><%= product.descripcion %></p>
+                  </div>
+               
+
+                  <!-- Product Pricing -->
+                  <div class="product-price">
+                    <span>$ <%= product.precio %></span>
+                    <a href="#" class="cart-btn cart-btn-logged">Agregar</a>
+                  </div>
+
+                    <!-- Edit and Delete-->
+                    <div class="botonesEdicion">
+                        <a href="/products/<%=product.id%>/edit"><button class="btn">Editar</button></a>
+                        
+                        <form method="POST" action="/products/<%=product.id%>/delete?_method=DELETE" class="eliminarPto"> 
+                            <button class="btn" type="submit">ELIMINAR</button>
+                        </form>
+
+                    </div>
+
+                </div>
+
+                
+
+            </section>
+
+
         </section>
     </main>
 
     <!-- FOOTER-->
-    <section class="footerPartial"
+    <footer class="footerPartial"
         <%- include('../partials/footer') %>
-    </section>
+    </footer>
 
 </body>
 </html>
