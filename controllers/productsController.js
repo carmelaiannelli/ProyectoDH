@@ -73,7 +73,7 @@ module.exports={
             db.Producto.update({
                 nombre:req.body.productName,
                 descripcion:req.body.productDescription,
-                //foto: req.file.filename,
+                foto: req.file.filename,
                 marca:req.body.brand,
                 precio:req.body.productPrice
                 },
@@ -81,9 +81,10 @@ module.exports={
                 where: {
                 id: req.params.id
                 }
-            });
-        //aca no se como hacer para autollenar los campos incompletos
-        res.redirect('/products/'+req.params.id)
+            })
+            .then (producto=>{
+                res.redirect('/products/'+req.params.id)
+            })
         }
     },
     delete:(req,res)=>{

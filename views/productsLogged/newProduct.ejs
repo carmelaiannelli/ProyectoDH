@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Producto</title>
-    <link rel="stylesheet" href="/stylesheets/newProduct.css">
+
+
     <!-- <script src="/js/validacionProducto.js"></script> -->
     
 </head>
@@ -15,7 +16,7 @@
         <%- include('../partials/headerLogged') %>
     </header>
     <main>
-        <form method="POST" action="/products/create" enctype="multipart/form-data" class="formularioProducto"> 
+        <!-- <form method="POST" action="/products/create" enctype="multipart/form-data" class="formularioProducto"> 
             <div class="inputContainer">
                 <div class="newProduct">
                     <input 
@@ -63,7 +64,97 @@
                 <% }) %>
                 <% } %>
             </div>
-        </form>
+        </form> -->
+
+
+        <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+            <div class="wrapper wrapper--w960">
+                <div class="card card-2">
+                    
+                    <div class="card-body">
+                        <h2 class="title">Agrega un producto nuevo</h2>
+                        <form method="POST" action="/products/create" enctype="multipart/form-data" class="formularioProducto">
+                            <div class="input-group">
+                                <input 
+                                    value="<%= locals.olds? olds.productName : ''  %>"
+                                    
+                                    type="text" name="productName" class="productName" placeholder="Nombre del producto" >
+                            </div>
+                            
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input type="text" name="productDescription" class="productDescription" placeholder="Descripción del producto"> 
+                                    </div>
+                                </div>
+                                
+                                <div class="col-2">
+                                    <label for="productPic"> Foto del producto</label>
+                                    <input type="file" name="productPic" id="productPic"  required> accept=".jpg, .png, .gif, .jpeg"
+                                </div>
+
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <div class="rs-select2 js-select-simple select--no-search">
+                                            <select name="productCat">
+                                                <option disabled="disabled" selected="selected">Categoria del producto</option>
+                                                <option value="1">llaves</option>
+                                                <option value="2">candados</option>
+                                                <option value="3">cerraduras</option>
+                                                <option value="4">otro</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="class">
+                                        <option disabled="disabled" selected="selected">Color</option>
+                                        <option value="1">dorado</option>
+                                        <option value="2">plateado</option>
+                                        <option value="3">blanco</option>
+                                        <option value="4">negro</option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input class="input--style-2" type="number" placeholder="Precio del producto" name="productPrice">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input class="input--style-2" type="text" placeholder="Marca del producto" name="brand">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div> 
+                                <% if (locals.allErrors){ %> 
+                                <% allErrors.forEach(error=>{ %>
+                                    <p> <%= error.msg %></p>
+                                <% }) %>
+                                <% } %>
+                            </div>
+
+                            <div class="p-t-30">
+                                <button class="btn btn--radius btn--green" type="submit">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main> 
+    <script src="/js/newsu.js"></script>
 </body>
 </html>
