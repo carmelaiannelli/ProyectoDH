@@ -52,7 +52,7 @@ module.exports=(sequelize,DataTypes)=>{
         });
 
         Producto.belongsTo(models.Categoria, {
-        as:"categoria",
+        as:"categorias",
         foreignKey:"categoria_id",
         // onDelete: 'CASCADE',
         // onUpdate:'CASCADE'

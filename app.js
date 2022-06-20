@@ -6,6 +6,8 @@ var logger = require('morgan');
 const methodOverride=require('method-override');
 const session= require('express-session');
 
+const cors = require('cors');
+
 
 //require routers
 var indexRouter = require('./routes/index');
@@ -38,7 +40,7 @@ app.use(methodOverride('_method'));
 //----------------MIDDLEWARES---------------------//
 app.use(session({secret: 'aca no entiendo que va pero meto un texto'}));
 
-
+app.use(cors())
 //-------------------------------------------------//
 
 

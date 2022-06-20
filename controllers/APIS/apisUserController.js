@@ -28,8 +28,20 @@ module.exports={
             data: {usuario},
             status: 200
         })
+    },
+    userComplete:  async (req, res) => {
+        const usuarios= await db.Usuario.findAll(
+            { include: [
+                {model: db.Producto,
+                as:"productos"
+            }]
+            }
+        )
+        return res.status(200).json({
+            data: {usuarios},
+            status: 200
+        })
     }
-
 
 }
 

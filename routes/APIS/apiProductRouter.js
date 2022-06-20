@@ -11,5 +11,12 @@ router.get('/api/products/', apiProduct.findAll);
 router.get('/api/products/:id', apiProduct.findOne);
 
 
+//testeo categ
+router.get('/api/productos/', apiProduct.list);
+
+//todas categorias
+router.get('/api/categorias/',apiProduct.categorias);
+
+
 
 module.exports=router;

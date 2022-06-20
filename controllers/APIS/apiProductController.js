@@ -8,10 +8,15 @@ module.exports={
     findAll: async(req,res)=>{
         const productos= await db.Producto.findAll(
             {attributes: 
-                ['id','nombre','descripcion',["concat('/images/prodImages/',  foto)" , 'foto del producto'], ["concat('/api/products/',  id)" , 'link'],['categoria_id','categoria'] ]
+                ['id','nombre','descripcion','marca',["concat('/images/prodImages/',  foto)" , 'foto'], ["concat('/api/products/',  id)" , 'link'],['categoria_id','categoria'] ]
             }
         )
-        
+        // let contador = await (productos, cat) =>{
+        //     let lista=productos.filter(elmt=>{
+        //         if (elmt==cat)
+        //     })
+        // }
+
         return res.status(200).json({
             total: productos.length,
             data: {productos},
@@ -36,7 +41,37 @@ module.exports={
             data: {producto},
             status: 200
         })
-    }
+    },
+    
+    list: async (req, res) => {
+        const productos= await db.Producto.findAll(
+            { include: [
+                {model: db.Categoria,
+                as:"categorias"
+            }]
+            }
+        )
 
+        return res.status(200).json({
+            data: {productos},
+            status: 200
+        })
+    },
+
+    categorias:async(req,res)=>{
+        const categorias= await db.Categoria.findAll({ 
+            include: [
+                {model: db.Producto,
+                as:"productos"
+            }],
+            order: [['id', 'ASC']]
+        })
+        return res.status(200).json({
+            total: categorias.length,
+            data: {categorias},
+            status: 200
+        })
+
+    }
 
 }

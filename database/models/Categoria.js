@@ -2,7 +2,7 @@
 
 module.exports=(sequelize,DataTypes)=>{
     
-    const alias='Categoria'
+    const alias="Categoria";
     const column= {
         id:{
             autoIncrement:true,
@@ -14,16 +14,14 @@ module.exports=(sequelize,DataTypes)=>{
             type:DataTypes.STRING(30)
         }
     };
-    const opc= { timestamps:false};
+    const opc= { timestamps:false, tableName:'categorias'};
 
 
     const Categoria= sequelize.define(alias,column,opc);
 
    
-    Categoria.associate=function(models){ //ese models es un cb predefinido y le puedo poner milanesa si quiero?
-        const Producto=models.Producto;
-    
-        Categoria.hasMany(Producto, {
+    Categoria.associate=function(models){ 
+        Categoria.hasMany(models.Producto, {
             foreignKey:'categoria_id',
             as: 'productos'
         });

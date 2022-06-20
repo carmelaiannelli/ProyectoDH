@@ -69,11 +69,16 @@ module.exports={
         
     },
     update:(req,res)=>{
+        
+        console.log(req.body)
+        console.log(req.file)
+
         if (req.session.usuario){
+            
             db.Producto.update({
                 nombre:req.body.productName,
                 descripcion:req.body.productDescription,
-                foto: req.file.filename,
+                foto: req.file ? req.file.filename : req.body.productPic,
                 marca:req.body.brand,
                 precio:req.body.productPrice
                 },

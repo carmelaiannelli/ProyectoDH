@@ -12,10 +12,10 @@ window.addEventListener('load',function(){
 
        
         if (nombreProducto.length<5){
-            errores.push('el nombre debe tener al menos 5 caracteres');
+            errores.push(' el nombre debe tener al menos 5 caracteres');
         }
         if (descripcion.length<20){
-            errores.push('la descripcion debe tener al menos 20 caracteres');
+            errores.push(' la descripcion debe tener al menos 20 caracteres');
         }
        
         if (errores.length){

@@ -72,7 +72,7 @@ router.post('/products/create',uploadFile.single('productPic'),validacionPto, pr
 router.get('/products/:id', products.detail);
 
 router.get('/products/:id/edit', products.edit);
-router.put('/products/:id/update',uploadFile.single('productPic'), validacionPto, products.update);
+router.put('/products/:id/update',uploadFile.single('productPic'), products.update);
 
 //delete product
 router.delete("/products/:id/delete",products.delete);
