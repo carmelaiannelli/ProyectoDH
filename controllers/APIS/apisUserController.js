@@ -37,8 +37,23 @@ module.exports={
             }]
             }
         )
+        
+        var usuariosFiltrado=[];
+        usuarios.forEach(usuario=>{
+            usuariosFiltrado.push({
+                id:usuario.id,
+                username: usuario.username,
+                nombre:usuario.nombre,
+                apellido: usuario.apellido,
+                email:usuario.email,
+                avatar:usuario.avatar,
+                productos: usuario.productos
+            })
+        })
+    
+
         return res.status(200).json({
-            data: {usuarios},
+            data: {usuarios:usuariosFiltrado},
             status: 200
         })
     }
